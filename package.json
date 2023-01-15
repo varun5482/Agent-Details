@@ -1,6 +1,7 @@
 {
   "name": "agent-details",
   "version": "0.1.0",
+  "homepage": "https://varun5482.github.io/Agent-Details",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
