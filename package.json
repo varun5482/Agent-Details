@@ -17,6 +17,7 @@
     "grommet-icons": "^4.8.0",
     "jotai": "^1.13.0",
     "react": "^18.2.0",
+    "react-db-google-sheets": "^2.1.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.6",

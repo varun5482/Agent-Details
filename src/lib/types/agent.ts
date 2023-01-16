@@ -1,11 +1,11 @@
 interface AgentData {
-  code: string;
+  code: number;
   name: string;
   dob: string;
   doa: string;
   agency_ending: string;
   email_id: string;
-  phone: string;
+  phone: number;
   club?: string;
   benefit?: string;
 }

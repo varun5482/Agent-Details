@@ -9,7 +9,7 @@ const getAgentList = atom(
 
     agentList = agentList.filter((agent: AgentData) => {
       if (
-        agent.code.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
+        (` ${agent.code}`).includes(searchValue.toLocaleLowerCase())
       ) {
         return true;
       }
@@ -26,15 +26,15 @@ const getAgentList = atom(
   (_, set, by: any) => {
     const agentData = by.map((agent: any) => {
       return {
-        code: agent["CODE NO"],
-        name: agent["AGENT NAME"],
-        dob: agent["D.O.B"],
-        club: agent["CLUB"],
-        benefit: agent["BENEFIT"],
-        doa: agent["D.O.A"],
-        agency_ending: agent["A ENDING"],
-        email_id: agent["EMAIL ID"],
-        phone: agent["CELL NO"],
+        code: agent.codeNo,
+        name: agent.agentName,
+        dob: agent.dob,
+        club: agent.club || "",
+        benefit: agent.benefit || "",
+        doa: agent.doa,
+        agency_ending: agent.aEnding,
+        email_id: agent.emailId,
+        phone: agent.cellNo,
       };
     });
     set(agentDetails, agentData);

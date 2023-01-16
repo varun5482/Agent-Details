@@ -1,8 +1,13 @@
 import React from "react";
 import { Box, Button, Text } from "grommet";
-import { Overlay, StyledDetailedCard, StyledButton } from "./StyledAgentDetailCard";
+import {
+  Overlay,
+  StyledDetailedCard,
+  StyledButton,
+} from "./StyledAgentDetailCard";
 import { useAtom } from "jotai";
 import { selectedAgent } from "../../lib/atoms/agents";
+import { getCurrentYears, getDateString } from "../../commons/utils";
 
 const AgentDetailCard = () => {
   const [agentDetail, setSelectedAgent] = useAtom(selectedAgent);
@@ -22,7 +27,12 @@ const AgentDetailCard = () => {
     {
       title: "Agency Details",
       data: [
-        { key: "Date of Agency", value: agentDetail?.doa },
+        {
+          key: "Date of Agency",
+          value: `${getDateString(`${agentDetail?.doa}`)}, ${getCurrentYears(
+            `${agentDetail?.doa}`
+          )}yrs`,
+        },
         { key: "Agency Ending", value: agentDetail?.agency_ending },
       ],
     },
@@ -48,7 +58,11 @@ const AgentDetailCard = () => {
                 <Text weight="bold">Agency Code:</Text> {agentDetail?.code}
               </Box>
               <Box direction="row" align="center">
-                <Text weight="bold">DOB:</Text> {agentDetail?.dob}
+                <Text weight="bold">DOB:</Text>
+                {getDateString(`${agentDetail?.dob}`)},
+                <Text weight="bold">
+                  {getCurrentYears(`${agentDetail?.dob}`)}yrs
+                </Text>
               </Box>
             </Box>
           </Box>
