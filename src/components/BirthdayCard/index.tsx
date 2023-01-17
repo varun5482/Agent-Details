@@ -33,19 +33,22 @@ const BirthdayCard = () => {
       {birthdayToday.length ? (
         birthdayToday.map((agent: AgentData) => {
           return (
-            <Box direction="row" gap="5px" align="center">
-              <Box>{agent.name}</Box>
-              <Box>{getCurrentYears(agent.dob)} yrs</Box>
+            <Box direction="row" gap="5px" align="center" justify="between">
+              <Box direction="row">
+                <Box>{agent.name},</Box>
+                <Box>{getCurrentYears(agent.dob)}yrs</Box>
+              </Box>
+              <StyledButton
+                primary
+                onClick={() => sendWhatsappMessage(agent.phone)}
+              >
+                Send Message
+              </StyledButton>
             </Box>
           );
         })
       ) : (
-        <Box>
-          No Birthdays Today
-          <StyledButton primary onClick={() => sendWhatsappMessage(9768282149)}>
-            Send Message
-          </StyledButton>
-        </Box>
+        <Box>No Birthdays Today</Box>
       )}
     </BirthdayContainer>
   );
