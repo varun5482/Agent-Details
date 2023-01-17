@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     setAgentDetails(AgentData);
-  });
+  }, []);
 
   return (
     <div className="App">

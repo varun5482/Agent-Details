@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Text } from "grommet";
+import { Box, Text } from "grommet";
 import {
   Overlay,
   StyledDetailedCard,

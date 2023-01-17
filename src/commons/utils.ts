@@ -1,6 +1,6 @@
 const getCurrentYears = (date: string): number | string => {
   if (!date) {
-    return '';
+    return "";
   }
   const timeDiff = new Date(Date.now() - new Date(date).getTime());
   return Math.abs(timeDiff.getUTCFullYear() - 1970);
@@ -8,10 +8,12 @@ const getCurrentYears = (date: string): number | string => {
 
 const getDateString = (date: string): string => {
   if (!date) {
-    return '';
+    return "";
   }
-  const dateVal= new Date(date);
-  return `${dateVal.getDay()} - ${dateVal.getMonth()} - ${dateVal.getFullYear()}`;
+  const dateVal = new Date(date);
+  return `${dateVal.getDay()} - ${
+    dateVal.getMonth() + 1
+  } - ${dateVal.getFullYear()}`;
 };
 
 export { getCurrentYears, getDateString };
