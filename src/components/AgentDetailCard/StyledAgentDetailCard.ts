@@ -8,13 +8,14 @@ export const Overlay = styled(Box)`
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: 5;
 `;
 
 export const StyledDetailedCard = styled(Box)`
   position: fixed;
   top: 20vh;
   left: 5vw;
-  z-index: 5;
+  z-index: 10;
   width: 90vw;
   height: auto;
   padding: ${({ theme }) => theme.global.sizes.large};

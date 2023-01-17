@@ -7,7 +7,7 @@ export const StyledFilterBox = styled(Box)`
     left: 0;
     background: brown;
     width: 100vw;
-    z-index: 2;
+    z-index: 5;
 `;
 
 export const StyledSearch = styled(TextInput)`
