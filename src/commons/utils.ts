@@ -18,8 +18,8 @@ const getDateString = (date: string): string => {
 
 const sendWhatsappMessage = (phone: number) => {
   let message = `Many Happy Returns of the Day.<br/> Have a healthy and great year ahead. <br/>Regards Vasudev Mukherjee`;
-  let whatsappUrl = `https://web.whatsapp.com/send?phone=${phone}`;
-  whatsappUrl += `&text=${encodeURI(message)}&app_absent=0`;
+  let whatsappUrl = `whatsapp://send?phone=91 ${phone}`;
+  whatsappUrl += `&text=${encodeURI(message)}`;
   window.open(whatsappUrl);
 };
 
