@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { getAgentList } from "../../lib/selectors/agentList";
 import { Box } from "grommet";
 import AgentData from "../../lib/types/agent";
-import { BirthdayContainer } from "./StyledBirthdayCard";
-import { getCurrentYears } from "../../commons/utils";
+import { BirthdayContainer, StyledButton } from "./StyledBirthdayCard";
+import { getCurrentYears, sendWhatsappMessage } from "../../commons/utils";
 
 const BirthdayCard = () => {
   const [agentDetails] = useAtom(getAgentList);
@@ -40,7 +40,12 @@ const BirthdayCard = () => {
           );
         })
       ) : (
-        <Box>No Birthdays Today</Box>
+        <Box>
+          No Birthdays Today
+          <StyledButton primary onClick={() => sendWhatsappMessage(9768282149)}>
+            Send Message
+          </StyledButton>
+        </Box>
       )}
     </BirthdayContainer>
   );
